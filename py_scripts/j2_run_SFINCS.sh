@@ -7,7 +7,7 @@
 module load 2021
 module load Anaconda3/2021.05
 #source activate hydromt-sfincs_rot
-source activate hydromt-sfincs_latest
+source activate run_SFINCS
 
 
 yr="$1" # yr*1000 from STORM
