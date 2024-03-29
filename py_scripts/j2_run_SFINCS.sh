@@ -102,9 +102,9 @@ for storm_id in $(echo "$unique_storm_ids" | sed -n "${first_event},${last_event
                 
                 # Postprocess SFINCS
                 # Calculate the hmax, downscale & delete the files that are not necessary!
-                #echo "Start postprocess & impact modelling of event $storm_id - submodel $sfincs_submodel_nr"
-                #cd "/projects/0/einf2224/paper2/scripts/py_scripts/"
-                #p5_postprocess_SFINCS_run_IMPACT.py "$sfincs_submodel" "$sfincs_submodel_nr" "$storm_id"
+                echo "Start postprocess & impact modelling of event $storm_id - submodel $sfincs_submodel_nr"
+                cd "/projects/0/einf2224/paper2/scripts/py_scripts/"
+                p5_postprocess_SFINCS_run_IMPACT.py "$sfincs_submodel" "$sfincs_submodel_nr" "$storm_id"
             fi
         done
         # If simulations for specific event finished correctly, delete the temporary folder
