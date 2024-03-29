@@ -6,7 +6,7 @@
 
 module load 2021
 module load Anaconda3/2021.05
-source activate postprocess_paper2_test
+source activate postprocess
 
 python p6b_worst_events.py
 python p6b_worst_events_build_perCOUNTRY_goodzonal_v2.py
