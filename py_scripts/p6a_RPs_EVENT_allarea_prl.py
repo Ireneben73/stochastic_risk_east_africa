@@ -77,14 +77,3 @@ for i in range(len(ranks)):
     with open('output_postprocess/p6a_RPs_' + asset + '_' + admin_unit + '.csv', 'a', encoding='utf-8') as csvfile:
       writer = csv.writer(csvfile, delimiter=',')
       writer.writerow([rank, event_damage, rps])
-'''      
-#for country_id in index:
-if not os.path.exists('output_postprocess/p6a_event_expected_damage_' + asset + '_' + admin_unit + '.csv'):
-  with open('output_postprocess/p6a_event_expected_damage_' + asset + '_' + admin_unit + '.csv', 'w', encoding='utf-8') as csvfile:
-    writer = csv.writer(csvfile, delimiter=',')
-    writer.writerow(['AED'])
-
-with open('output_postprocess/p6a_event_expected_damage_' + asset + '_' + admin_unit + '.csv', 'a', encoding='utf-8') as csvfile:
-  writer = csv.writer(csvfile, delimiter=',')
-  writer.writerow([annual_expected_damages_values])
-'''
