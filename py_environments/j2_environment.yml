@@ -1,4 +1,4 @@
-name: hydromt-sfincs_latest
+name: run_SFINCS
 channels:
   - conda-forge
   - defaults
