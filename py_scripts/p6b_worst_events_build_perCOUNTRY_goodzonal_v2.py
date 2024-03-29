@@ -137,7 +137,7 @@ if matching_files:
                       if not np.isnan(variable_data) and variable_data != 0:
                           print(f"{i}: {variable_name}: {variable_data.values}")
                           
-                          output_file='/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_event_damages_build_perCOUNTRY_goodzonal_new.csv'
+                          output_file='/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_event_damages_build_perCOUNTRY_goodzonal_new.csv'
                           if not os.path.exists(output_file):
                             with open(output_file, 'w', encoding='utf-8') as csvfile:
                               writer = csv.writer(csvfile, delimiter=',')
