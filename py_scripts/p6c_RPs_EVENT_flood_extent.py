@@ -17,7 +17,7 @@ from dask import delayed, compute
 from dask.distributed import Client
 
 
-events=pd.read_csv(r'/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_event_floodext_submodel_nointegers.csv')
+events=pd.read_csv(r'/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_event_floodext_submodel_nointegers.csv')
 single_events=events.groupby('Variable', as_index=False)['Sum'].sum()
 events_floodexts=single_events['Sum']
 events_floodexts=events_floodexts[events_floodexts != 0]
@@ -68,12 +68,12 @@ for i in range(len(ranks)):
     rank=ranks[int(i)-1]
     event_floodext=event_floodexts[int(i)-1]
     rps=rps_values[int(i)-1]
-    if not os.path.exists('output_postprocess/p6a_RPs_floodext_perEVENT_allAREA.csv'):
-      with open('output_postprocess/p6a_RPs_floodext_perEVENT_allAREA.csv', 'w', encoding='utf-8') as csvfile:
+    if not os.path.exists('output_postprocess/p6c_RPs_floodext_perEVENT_allAREA.csv'):
+      with open('output_postprocess/p6c_RPs_floodext_perEVENT_allAREA.csv', 'w', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(['Rank', 'Total floodexts', 'Return Period'])
     
-    with open('output_postprocess/p6a_RPs_floodext_perEVENT_allAREA.csv', 'a', encoding='utf-8') as csvfile:
+    with open('output_postprocess/p6c_RPs_floodext_perEVENT_allAREA.csv', 'a', encoding='utf-8') as csvfile:
       writer = csv.writer(csvfile, delimiter=',')
       writer.writerow([rank, event_floodext, rps])
 
