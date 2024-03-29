@@ -19,7 +19,7 @@ from dask.distributed import Client
 asset=sys.argv[1]
 admin_unit=sys.argv[2]
 
-events=pd.read_csv(r'/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_event_damages_'+ asset + '.csv')
+events=pd.read_csv(r'/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_event_damages_'+ asset + '.csv')
 events_damages=events['Sum']
 events_damages=events_damages[events_damages != 0]
 print('events_damages:', events_damages)
@@ -69,11 +69,11 @@ for i in range(len(ranks)):
     rank=ranks[int(i)-1]
     event_damage=event_damages[int(i)-1]
     rps=rps_values[int(i)-1]
-    if not os.path.exists('output_postprocess/p6a_RPs_' + asset + '_' + admin_unit +'.csv'):
-      with open('output_postprocess/p6a_RPs_' + asset + '_' + admin_unit + '.csv', 'w', encoding='utf-8') as csvfile:
+    if not os.path.exists('output_postprocess/p6c_RPs_' + asset + '_' + admin_unit +'.csv'):
+      with open('output_postprocess/p6c_RPs_' + asset + '_' + admin_unit + '.csv', 'w', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(['Rank', 'Total Damages', 'Return Period'])
     
-    with open('output_postprocess/p6a_RPs_' + asset + '_' + admin_unit + '.csv', 'a', encoding='utf-8') as csvfile:
+    with open('output_postprocess/p6c_RPs_' + asset + '_' + admin_unit + '.csv', 'a', encoding='utf-8') as csvfile:
       writer = csv.writer(csvfile, delimiter=',')
       writer.writerow([rank, event_damage, rps])
