@@ -86,10 +86,10 @@ country_names = {
     10: "Seychelles"
 }
 
-rps_event_loss=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_build_event_perCOUNTRY_new.csv')
-rps_annual_loss=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_build_annual_perCOUNTRY_new_EVENTnrs.csv')
-rps_event_pop=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_pop_event_perCOUNTRY_new.csv')
-rps_annual_pop=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_pop_annual_perCOUNTRY_new_EVENTnrs.csv')
+rps_event_loss=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_build_event_perCOUNTRY_new.csv')
+rps_annual_loss=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_build_annual_perCOUNTRY_new_EVENTnrs.csv')
+rps_event_pop=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_pop_event_perCOUNTRY_new.csv')
+rps_annual_pop=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_pop_annual_perCOUNTRY_new_EVENTnrs.csv')
 
 # Plots
 num_rows=8 + 1
@@ -102,10 +102,10 @@ additional_row_axes = axes[0]  # This selects the first row of subplots
 ## PLOTS FOR ALL THE STUDY AREA
 # Losses 
 # Exceedance probabilities
-rps_event_loss_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_build_event_allAREA.csv')
-rps_annual_loss_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_build_annual_allAREA_EVENTnrs.csv')
-rps_event_pop_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_pop_event_allAREA.csv')
-rps_annual_pop_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_pop_annual_allAREA_EVENTnrs.csv')
+rps_event_loss_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_build_event_allAREA.csv')
+rps_annual_loss_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_build_annual_allAREA_EVENTnrs.csv')
+rps_event_pop_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_pop_event_allAREA.csv')
+rps_annual_pop_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_pop_annual_allAREA_EVENTnrs.csv')
 
 event_counts_loss_allarea=rps_annual_loss_allarea['Event Count']
 
@@ -257,4 +257,4 @@ fig.legend(handles=legend_elements, labels=legend_labels, loc='lower center', bb
 #plt.subplots_adjust(left=0.1, right=0.9, top=0.95, bottom=0.05, wspace=0.2, hspace=0.2)
 plt.subplots_adjust(left=0.1, right=0.9, top=0.98, bottom=0.08, wspace=0.2, hspace=0.2)
 
-fig.savefig('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/figures/p6a_RPs_optiond_all.png', dpi=600)
+fig.savefig('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/figures/p6c_RPs_optiond_all.png', dpi=600)
