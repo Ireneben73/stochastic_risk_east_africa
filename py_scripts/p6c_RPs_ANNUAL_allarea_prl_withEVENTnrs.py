@@ -19,7 +19,7 @@ from dask.distributed import Client
 asset=sys.argv[1]
 admin_unit=sys.argv[2]
 
-events=pd.read_csv(r'/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_event_damages_'+ asset + '.csv')#.head(40)
+events=pd.read_csv(r'/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_event_damages_'+ asset + '.csv')#.head(40)
 
 #events_sorted = events.sort_values(by='Sum', ascending=False)
 #events = events_sorted.head(30)
@@ -107,23 +107,23 @@ for i in range(len(ranks)):
     annual_damage=annual_damages_list[int(i)-1]
     rps=rps_values_list[int(i)-1]
     event_count=event_counts_list[int(i)-1]
-    if not os.path.exists('output_postprocess/p6a_RPs_' + asset + '_' + admin_unit +'_EVENTnrs.csv'):
-      with open('output_postprocess/p6a_RPs_' + asset + '_' + admin_unit + '_EVENTnrs.csv', 'w', encoding='utf-8') as csvfile:
+    if not os.path.exists('output_postprocess/p6c_RPs_' + asset + '_' + admin_unit +'_EVENTnrs.csv'):
+      with open('output_postprocess/p6c_RPs_' + asset + '_' + admin_unit + '_EVENTnrs.csv', 'w', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(['Rank', 'Annual Damages', 'Return Period', 'Event Count'])
     
-    with open('output_postprocess/p6a_RPs_' + asset + '_' + admin_unit + '_EVENTnrs.csv', 'a', encoding='utf-8') as csvfile:
+    with open('output_postprocess/p6c_RPs_' + asset + '_' + admin_unit + '_EVENTnrs.csv', 'a', encoding='utf-8') as csvfile:
       writer = csv.writer(csvfile, delimiter=',')
       writer.writerow([rank, annual_damage, rps, event_count])
 
 '''      
 #for country_id in index:
-if not os.path.exists('output_postprocess/p6a_event_expected_damage_' + asset + '_' + admin_unit + '.csv'):
-  with open('output_postprocess/p6a_event_expected_damage_' + asset + '_' + admin_unit + '.csv', 'w', encoding='utf-8') as csvfile:
+if not os.path.exists('output_postprocess/p6c_event_expected_damage_' + asset + '_' + admin_unit + '.csv'):
+  with open('output_postprocess/p6c_event_expected_damage_' + asset + '_' + admin_unit + '.csv', 'w', encoding='utf-8') as csvfile:
     writer = csv.writer(csvfile, delimiter=',')
     writer.writerow(['AED'])
 
-with open('output_postprocess/p6a_event_expected_damage_' + asset + '_' + admin_unit + '.csv', 'a', encoding='utf-8') as csvfile:
+with open('output_postprocess/p6c_event_expected_damage_' + asset + '_' + admin_unit + '.csv', 'a', encoding='utf-8') as csvfile:
   writer = csv.writer(csvfile, delimiter=',')
   writer.writerow([annual_expected_damages_values])
 '''
