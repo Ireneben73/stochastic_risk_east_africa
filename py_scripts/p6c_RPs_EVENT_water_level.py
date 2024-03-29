@@ -16,7 +16,7 @@ import dask.dataframe as dd
 from dask import delayed, compute
 from dask.distributed import Client
 
-events=pd.read_csv(r'/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6d_water_level_perEVENT.csv')
+events=pd.read_csv(r'/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_water_level_perEVENT.csv')
 events_waterlevel=events['max_wl']
 
 print('START CALCULATING RETURN PERIODS', flush=True)    
@@ -64,11 +64,11 @@ for i in range(len(ranks)):
     rank=ranks[int(i)-1]
     event_wl=event_waterlevel[int(i)-1]
     rps=rps_values[int(i)-1]
-    if not os.path.exists('output_postprocess/p6a_RPs_waterlevel_perEVENT_allAREA.csv'):
-      with open('output_postprocess/p6a_RPs_waterlevel_perEVENT_allAREA.csv', 'w', encoding='utf-8') as csvfile:
+    if not os.path.exists('output_postprocess/p6c_RPs_waterlevel_perEVENT_allAREA.csv'):
+      with open('output_postprocess/p6c_RPs_waterlevel_perEVENT_allAREA.csv', 'w', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(['Rank', 'Total waterlevel', 'Return Period'])
     
-    with open('output_postprocess/p6a_RPs_waterlevel_perEVENT_allAREA.csv', 'a', encoding='utf-8') as csvfile:
+    with open('output_postprocess/p6c_RPs_waterlevel_perEVENT_allAREA.csv', 'a', encoding='utf-8') as csvfile:
       writer = csv.writer(csvfile, delimiter=',')
       writer.writerow([rank, event_wl, rps])
