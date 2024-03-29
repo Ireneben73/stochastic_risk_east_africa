@@ -1,4 +1,4 @@
-name: postprocess_GTSM
+name: run_GTSM
 channels:
   - defaults
 dependencies:
