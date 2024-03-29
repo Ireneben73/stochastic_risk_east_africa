@@ -19,7 +19,7 @@ files_directory = '/projects/0/einf2224/paper2/scripts/model_runs/gtsm/YEARS_' +
 files = os.listdir(files_directory)
 
 # Output file to save event IDs that exceed 10
-output_file = '/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6d_water_level_perEVENT.csv'
+output_file = '/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_water_level_perEVENT.csv'
 
 # Events that give errors
 wrong_events_path = "/projects/0/einf2224/paper2/data/input/impact/gtsm_wrong_events.txt"
