@@ -1,4 +1,4 @@
-name: postprocess_paper2_test
+name: postprocess
 channels:
   - conda-forge
   - defaults
