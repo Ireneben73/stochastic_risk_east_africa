@@ -81,63 +81,63 @@ ax1.text(0.02, 0.93, 'a)', transform=ax1.transAxes, fontsize=14, fontweight='bol
 
 # Exceedance probabilities - Storm surge
 tolerance = 1e-6
-print(type(rps_event_surge_allarea['Total floodexts']))
-#rps_event_floodext_event1=rps_event_floodext_allarea[rps_event_floodext_allarea['Total floodexts']==1492547668.81481]
-rps_event_surge_event1 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total floodexts'], 2.555027146, atol=tolerance)] 
-rps_event_surge_event2 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total floodexts'], 3.853574337, atol=tolerance)]
-rps_event_surge_event3 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total floodexts'], 3.329968837, atol=tolerance)]
-rps_event_surge_event4 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total floodexts'], 3.040687173, atol=tolerance)]
-rps_event_surge_event5 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total floodexts'], 2.389394300, atol=tolerance)]
+print(type(rps_event_surge_allarea['Total stormsurge']))
+#rps_event_floodext_event1=rps_event_floodext_allarea[rps_event_floodext_allarea['Total stormsurge']==1492547668.81481]
+rps_event_surge_event1 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total stormsurge'], 2.555027146, atol=tolerance)] 
+rps_event_surge_event2 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total stormsurge'], 3.853574337, atol=tolerance)]
+rps_event_surge_event3 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total stormsurge'], 3.329968837, atol=tolerance)]
+rps_event_surge_event4 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total stormsurge'], 3.040687173, atol=tolerance)]
+rps_event_surge_event5 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total stormsurge'], 2.389394300, atol=tolerance)]
 '''
-rps_event_surge_event1 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total floodexts'], 2.555027147, atol=tolerance)]
-rps_event_surge_event2 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total floodexts'], 3.853574338, atol=tolerance)]
-rps_event_surge_event3 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total floodexts'], 3.329968837, atol=tolerance)]
-rps_event_surge_event4 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total floodexts'], 3.034898975, atol=tolerance)]
-rps_event_surge_event5 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total floodexts'], 2.389394301, atol=tolerance)]
+rps_event_surge_event1 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total stormsurge'], 2.555027147, atol=tolerance)]
+rps_event_surge_event2 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total stormsurge'], 3.853574338, atol=tolerance)]
+rps_event_surge_event3 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total stormsurge'], 3.329968837, atol=tolerance)]
+rps_event_surge_event4 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total stormsurge'], 3.034898975, atol=tolerance)]
+rps_event_surge_event5 = rps_event_surge_allarea[np.isclose(rps_event_surge_allarea['Total stormsurge'], 2.389394301, atol=tolerance)]
 '''
 print('rps_event_surge_event1:', rps_event_surge_event1)
 ax5 = fig.add_subplot(gs[1, 0])
-ax5.scatter(rps_event_surge_allarea['Return Period'], (rps_event_surge_allarea['Total floodexts']), marker='x', c='lightgray', zorder=1, s=100)
-ax5.scatter(rps_event_surge_event1['Return Period'], (rps_event_surge_event1['Total floodexts']), marker='x', c=cmap(0.9), label='2.6 m', linewidths=3, zorder=99, s=100)
-ax5.scatter(rps_event_surge_event2['Return Period'], (rps_event_surge_event2['Total floodexts']), marker='x', c=cmap(0.75), label='3.9 m', linewidths=3,zorder=99, s=100)
-ax5.scatter(rps_event_surge_event3['Return Period'], (rps_event_surge_event3['Total floodexts']), marker='x', c='limegreen', label='3.3 m', linewidths=3,zorder=99, s=100)
-ax5.scatter(rps_event_surge_event4['Return Period'], (rps_event_surge_event4['Total floodexts']), marker='x', c=cmap(0.25), label='3.0 m', linewidths=3,zorder=99, s=100)
-ax5.scatter(rps_event_surge_event5['Return Period'], (rps_event_surge_event5['Total floodexts']), marker='x', c=cmap(0), label='2.4 m', linewidths=3,zorder=99, s=100)
+ax5.scatter(rps_event_surge_allarea['Return Period'], (rps_event_surge_allarea['Total stormsurge']), marker='x', c='lightgray', zorder=1, s=100)
+ax5.scatter(rps_event_surge_event1['Return Period'], (rps_event_surge_event1['Total stormsurge']), marker='x', c=cmap(0.9), label='2.6 m', linewidths=3, zorder=99, s=100)
+ax5.scatter(rps_event_surge_event2['Return Period'], (rps_event_surge_event2['Total stormsurge']), marker='x', c=cmap(0.75), label='3.9 m', linewidths=3,zorder=99, s=100)
+ax5.scatter(rps_event_surge_event3['Return Period'], (rps_event_surge_event3['Total stormsurge']), marker='x', c='limegreen', label='3.3 m', linewidths=3,zorder=99, s=100)
+ax5.scatter(rps_event_surge_event4['Return Period'], (rps_event_surge_event4['Total stormsurge']), marker='x', c=cmap(0.25), label='3.0 m', linewidths=3,zorder=99, s=100)
+ax5.scatter(rps_event_surge_event5['Return Period'], (rps_event_surge_event5['Total stormsurge']), marker='x', c=cmap(0), label='2.4 m', linewidths=3,zorder=99, s=100)
 ax5.set_xscale('log')
 ax5.set_xlabel('Return period [-]', fontsize=14)
 ax5.tick_params(axis='y', labelsize=14)
 ax5.tick_params(axis='x', labelsize=14)
 #ax2.set_xticklabels([])
-ax5.set_ylim(0, (rps_event_surge_allarea['Total floodexts'].max())*1.05)
+ax5.set_ylim(0, (rps_event_surge_allarea['Total stormsurge'].max())*1.05)
 ax5.set_ylabel('Max. Storm surge residuals [m+MSL]', fontsize=14)
 ax5.legend(loc='lower right', handletextpad=0.5, fontsize=14, frameon=False)
 ax5.text(0.02, 0.93, 'b)', transform=ax5.transAxes, fontsize=14, fontweight='bold')
 
-# Exceedance probabilities - Storm surge
+# Exceedance probabilities - Water levels
 tolerance = 1e-6
 print(rps_event_wl_allarea)
-#rps_event_floodext_event1=rps_event_wl_allarea[rps_event_wl_allarea['Total floodexts']==1492547668.81481]
-rps_event_wl_event1 = rps_event_wl_allarea[np.isclose(rps_event_wl_allarea['Total floodexts'], 5.14800024032592, atol=tolerance)]
-#rps_event_wl_event1=rps_event_wl_allarea[rps_event_wl_allarea['Total floodexts']==5.14800024032592]
+#rps_event_floodext_event1=rps_event_wl_allarea[rps_event_wl_allarea['Total waterlevel']==1492547668.81481]
+rps_event_wl_event1 = rps_event_wl_allarea[np.isclose(rps_event_wl_allarea['Total waterlevel'], 5.14800024032592, atol=tolerance)]
+#rps_event_wl_event1=rps_event_wl_allarea[rps_event_wl_allarea['Total waterlevel']==5.14800024032592]
 
-rps_event_wl_event2 = rps_event_wl_allarea[np.isclose(rps_event_wl_allarea['Total floodexts'], 5.02400016784667, atol=tolerance)]
-rps_event_wl_event3 = rps_event_wl_allarea[np.isclose(rps_event_wl_allarea['Total floodexts'], 5.03000020980834, atol=tolerance)]
-rps_event_wl_event4 = rps_event_wl_allarea[np.isclose(rps_event_wl_allarea['Total floodexts'], 4.66700029373168, atol=tolerance)]
-rps_event_wl_event5 = rps_event_wl_allarea[np.isclose(rps_event_wl_allarea['Total floodexts'], 4.80400037765502, atol=tolerance)]
+rps_event_wl_event2 = rps_event_wl_allarea[np.isclose(rps_event_wl_allarea['Total waterlevel'], 5.02400016784667, atol=tolerance)]
+rps_event_wl_event3 = rps_event_wl_allarea[np.isclose(rps_event_wl_allarea['Total waterlevel'], 5.03000020980834, atol=tolerance)]
+rps_event_wl_event4 = rps_event_wl_allarea[np.isclose(rps_event_wl_allarea['Total waterlevel'], 4.66700029373168, atol=tolerance)]
+rps_event_wl_event5 = rps_event_wl_allarea[np.isclose(rps_event_wl_allarea['Total waterlevel'], 4.80400037765502, atol=tolerance)]
 print('rps_event_wl_event1:', rps_event_wl_event1)
 ax6 = fig.add_subplot(gs[2, 0])
-ax6.scatter(rps_event_wl_allarea['Return Period'], (rps_event_wl_allarea['Total floodexts']), marker='x', c='lightgray', zorder=1, s=100)
-ax6.scatter(rps_event_wl_event1['Return Period'], (rps_event_wl_event1['Total floodexts']), marker='x', c=cmap(0.9), label='5.1 m', linewidths=3, zorder=99, s=100)
-ax6.scatter(rps_event_wl_event2['Return Period'], (rps_event_wl_event2['Total floodexts']), marker='x', c=cmap(0.75), label='5.0 m', linewidths=3,zorder=99, s=100)
-ax6.scatter(rps_event_wl_event3['Return Period'], (rps_event_wl_event3['Total floodexts']), marker='x', c='limegreen', label='5.0 m', linewidths=3,zorder=99, s=100)
-ax6.scatter(rps_event_wl_event4['Return Period'], (rps_event_wl_event4['Total floodexts']), marker='x', c=cmap(0.25), label='4.7 m', linewidths=3,zorder=99, s=100)
-ax6.scatter(rps_event_wl_event5['Return Period'], (rps_event_wl_event5['Total floodexts']), marker='x', c=cmap(0), label='4.8 m', linewidths=3,zorder=99, s=100)
+ax6.scatter(rps_event_wl_allarea['Return Period'], (rps_event_wl_allarea['Total waterlevel']), marker='x', c='lightgray', zorder=1, s=100)
+ax6.scatter(rps_event_wl_event1['Return Period'], (rps_event_wl_event1['Total waterlevel']), marker='x', c=cmap(0.9), label='5.1 m', linewidths=3, zorder=99, s=100)
+ax6.scatter(rps_event_wl_event2['Return Period'], (rps_event_wl_event2['Total waterlevel']), marker='x', c=cmap(0.75), label='5.0 m', linewidths=3,zorder=99, s=100)
+ax6.scatter(rps_event_wl_event3['Return Period'], (rps_event_wl_event3['Total waterlevel']), marker='x', c='limegreen', label='5.0 m', linewidths=3,zorder=99, s=100)
+ax6.scatter(rps_event_wl_event4['Return Period'], (rps_event_wl_event4['Total waterlevel']), marker='x', c=cmap(0.25), label='4.7 m', linewidths=3,zorder=99, s=100)
+ax6.scatter(rps_event_wl_event5['Return Period'], (rps_event_wl_event5['Total waterlevel']), marker='x', c=cmap(0), label='4.8 m', linewidths=3,zorder=99, s=100)
 ax6.set_xscale('log')
 ax6.set_xlabel('Return period [-]', fontsize=14)
 ax6.tick_params(axis='y', labelsize=14)
 ax6.tick_params(axis='x', labelsize=14)
 #ax2.set_xticklabels([])
-ax6.set_ylim(0, (rps_event_wl_allarea['Total floodexts'].max())*1.05)
+ax6.set_ylim(0, (rps_event_wl_allarea['Total waterlevel'].max())*1.05)
 ax6.set_ylabel('Max. Storm tide [m+MSL]', fontsize=14)
 ax6.legend(loc='lower right', handletextpad=0.5, fontsize=14, frameon=False)
 ax6.text(0.02, 0.93, 'c)', transform=ax6.transAxes, fontsize=14, fontweight='bold')
