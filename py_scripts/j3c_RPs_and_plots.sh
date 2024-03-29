@@ -17,7 +17,7 @@ python p6c_RPs_EVENT_perCOUNTRY.py
 python p6c_RPs_EVENT_storm_surge.py
 python p6c_RPs_EVENT_water_level.py
 
-echo "General all the result plots"
+echo "Generate all the result plots"
 python p6c_plots_fig1.py
 python p6c_plots_fig2.py
 python p6c_plots_fig3.py
