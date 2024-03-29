@@ -26,7 +26,7 @@ module purge
 module load 2021
 module load intel/2021a
 
-source activate postprocess_GTSM
+source activate run_GTSM
 
 # Data to modify when running
 #yr=0 # yr*1000 from STORM
