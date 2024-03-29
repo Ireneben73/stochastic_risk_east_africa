@@ -18,7 +18,7 @@ from dask.distributed import Client
 
 asset=sys.argv[1]
 
-events=pd.read_csv(r'/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_event_damages_' + asset + '_perCOUNTRY_goodzonal_new_unique.csv')
+events=pd.read_csv(r'/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_event_damages_' + asset + '_perCOUNTRY_goodzonal_new_unique.csv')
 print('events:', events) 
 
 print('START CALCULATING RETURN PERIODS', flush=True)  
@@ -75,12 +75,12 @@ for country_id in events['index'].unique():
         rank=ranks[int(i)-1]
         event_damage=event_damages[int(i)-1]
         rps=rps_values[int(i)-1]
-        if not os.path.exists('output_postprocess/p6a_RPs_' + asset + '_event_perCOUNTRY_new.csv'):
-          with open('output_postprocess/p6a_RPs_' + asset + '_event_perCOUNTRY_new.csv', 'w', encoding='utf-8') as csvfile:
+        if not os.path.exists('output_postprocess/p6c_RPs_' + asset + '_event_perCOUNTRY_new.csv'):
+          with open('output_postprocess/p6c_RPs_' + asset + '_event_perCOUNTRY_new.csv', 'w', encoding='utf-8') as csvfile:
             writer = csv.writer(csvfile, delimiter=',')
             writer.writerow(['Index', 'Rank', 'Total Damages', 'Return Period'])
         
-        with open('output_postprocess/p6a_RPs_' + asset + '_event_perCOUNTRY_new.csv', 'a', encoding='utf-8') as csvfile:
+        with open('output_postprocess/p6c_RPs_' + asset + '_event_perCOUNTRY_new.csv', 'a', encoding='utf-8') as csvfile:
           writer = csv.writer(csvfile, delimiter=',')
           writer.writerow([country_id, rank, event_damage, rps])
     
