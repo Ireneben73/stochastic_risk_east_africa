@@ -26,7 +26,7 @@ def write_spw_file(filename,n_cols,n_rows,tc_radius,startdate,nodata_array_wind,
         f.write("n_rows         = " + str(n_rows) + "\n")
         f.write("grid_unit      = degree\n")
         f.write("spw_radius     = " + str(int(tc_radius*1000)) + "\n")
-        f.write("spw_merge_frac = 0.333\n")
+        #f.write("spw_merge_frac = 0.333\n")
         f.write("spw_rad_unit   = m\n")
         f.write("n_quantity     = 3\n")
         f.write("quantity1      = wind_speed\n")
