@@ -6,7 +6,7 @@
 
 module load 2021
 module load Anaconda3/2021.05
-source activate postprocess_paper2_test
+source activate postprocess
 
 echo "Calculate the different return periods"
 python p6c_RPs_ANNUAL_allarea_prl_withEVENTnrs.py
