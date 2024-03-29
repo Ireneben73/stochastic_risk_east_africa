@@ -67,8 +67,6 @@ encoding={variable_name:{'dtype': 'int16', 'scale_factor': 0.001, 'complevel': 3
 #print('hmax_stormid:', hmax_stormid)
 hmax_stormid.to_netcdf(outfile, encoding=encoding, mode='a')
 
-# after this I can check if the submodel nc is there and then delete everything in my home directory
-
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## IMPACT MODEL
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
