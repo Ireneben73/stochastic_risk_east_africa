@@ -6,6 +6,10 @@ _Benito, I., Aerts, J.C.J.H., Eilander, D., Ward, P.J., and Muis,S., 2024. Stoch
 In this study we use a novel modelling framework to dynamically simulate stochastic coastal flood risk for the east coast of Africa. Our approach uses 10,000 years of synthetic tropical cyclones from STORM as input data to dynamically simulate water levels usingGlobal Tide and Surge Model (GTSM). These water level timeseries are then used as coastal boundary conditions for the hydrodynamic flood model Super-Fast INundation of CoastS (SFINCS). Subsequently, we calculate the damage of each individual tropical cyclone event and empirically derive the risk curve for each country.
 
 The code consists of the following files and directories:
+* **py_environments:** folder containing the environments necessary to run the scripts
+   * **j1_environment.yml:** environment file to run the j1_run_GTSM.sh bash script
+   * **j2_environment.yml:** environment file to run the j2_run_SFINCS.sh bash script
+   * **j3_environment.yml:** environment file to run the j3*.sh bash scripts
 * **py_scripts:** folder containing the main scripts to execute the stochastic risk modelling 
    * **p0_tc_filtering:** folder containing the scripts to filter the TC events from STORM
        * **filter_distance2land_v2.py:** script to filter the TC events from STORM based on distance to land
