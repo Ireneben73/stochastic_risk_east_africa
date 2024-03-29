@@ -129,7 +129,7 @@ for submodel_id in sfincs_submodels.FID.unique().tolist():
 
 # Create the DataFrame from the accumulated sums in the dictionary
 df_sum = pd.DataFrame(list(sum_dict.items()), columns=['Variable', 'Sum'])
-df_sum.to_csv('/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_event_damages.csv', index=False)
+df_sum.to_csv('/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_event_damages.csv', index=False)
 
 # Find the five variables with the largest sums
 largest_vars = df_sum.nlargest(5, 'Sum')
