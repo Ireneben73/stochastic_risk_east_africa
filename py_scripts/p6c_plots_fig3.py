@@ -14,11 +14,11 @@ from matplotlib.colors import ListedColormap, BoundaryNorm
 print('Starting to plot')
 
 # input data
-rps_event_surge_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_surge_perEVENT_allAREA.csv')
-rps_event_wl_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_waterlevel_perEVENT_allAREA.csv')
-rps_event_floodext_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_floodext_perEVENT_allAREA.csv')
-rps_event_loss_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_build_event_allAREA.csv')
-rps_event_pop_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_pop_event_allAREA.csv')
+rps_event_surge_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_surge_perEVENT_allAREA.csv')
+rps_event_wl_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_waterlevel_perEVENT_allAREA.csv')
+rps_event_floodext_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_floodext_perEVENT_allAREA.csv')
+rps_event_loss_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_build_event_allAREA.csv')
+rps_event_pop_allarea=pd.read_csv('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_pop_event_allAREA.csv')
 
 tracks=pd.read_csv('/projects/0/einf2224/paper2/data/input/impact/worst_5events_tracks.csv', header=None)
 
@@ -220,4 +220,4 @@ ax4.text(0.02, 0.93, 'f)', transform=ax4.transAxes, fontsize=14, fontweight='bol
 
 plt.subplots_adjust(top=0.95, bottom=0.05)
 plt.tight_layout()
-fig.savefig('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/figures/p6a_RPs_worst_events_fig7_v3.png', dpi=600)
+fig.savefig('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/figures/p6c_RPs_worst_events_fig7_v3.png', dpi=600)
