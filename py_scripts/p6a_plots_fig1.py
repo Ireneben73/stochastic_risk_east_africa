@@ -10,7 +10,7 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 
 
-frequency_analysis= pd.read_csv(r'/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_event_floodext_perCOUNTRY.csv')
+frequency_analysis= pd.read_csv(r'/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_event_floodext_perCOUNTRY.csv')
 countries_gdf = gpd.read_file(r'/gpfs/work2/0/einf2224/paper2/data/input/impact/admin_units/countries_studyarea.shp')
 print('frequency_analysis:', frequency_analysis)
 unique_country_ids = frequency_analysis['Index'].unique()
@@ -23,8 +23,8 @@ gs = fig.add_gridspec(1, 2, width_ratios=[1, 1], wspace=0.2)
 
 # add number of countries affected by nr. of events
 ax3 = fig.add_subplot(gs[0, 1])
-#data= pd.read_csv(r'/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_event_damages_build_perCOUNTRY.csv')
-data= pd.read_csv(r'/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_event_damages_build_perCOUNTRY_goodzonal_new_unique.csv')
+#data= pd.read_csv(r'/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_event_damages_build_perCOUNTRY.csv')
+data= pd.read_csv(r'/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_event_damages_build_perCOUNTRY_goodzonal_new_unique.csv')
 events=data.groupby('Variable')['index'].nunique()
 count_of_sums = events.value_counts()
 bars=ax3.bar(count_of_sums.index, count_of_sums, color='firebrick')
@@ -62,7 +62,7 @@ ax1.text(0.02, 0.93, 'a)', transform=ax1.transAxes, fontsize=14, fontweight='bol
 
 '''
 # damage frequency
-damages= pd.read_csv(r'/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_RPs_build_event_perCOUNTRY.csv')
+damages= pd.read_csv(r'/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6c_RPs_build_event_perCOUNTRY.csv')
 unique_country_ids_damages = damages['Index'].unique()
 ax2 = fig.add_subplot(gs[0, 1])
 #countries = [countries_gdf.iloc[country_id]['name'] for country_id in unique_country_ids]
@@ -87,4 +87,4 @@ ax2.text(0.02, 0.93, 'b)', transform=ax2.transAxes, fontsize=14, fontweight='bol
 #plt.subplots_adjust(left=0.05, right=0.95, bottom=0.4)
 plt.subplots_adjust(bottom=0.25)
 fig.tight_layout()
-fig.savefig('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/figures/p6b_flood_frequency_fig4_bars.png', dpi=600)
+fig.savefig('/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/figures/p6a_flood_frequency_fig4_bars.png', dpi=600)
