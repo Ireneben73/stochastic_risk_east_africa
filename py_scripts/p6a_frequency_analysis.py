@@ -133,7 +133,7 @@ if matching_files:
                 floodext_country_df_reset.drop(columns=['band'], inplace=True)
                 floodext_country_df_reset.drop(columns=['spatial_ref'], inplace=True)
                 print('floodext_country_df_reset:', submodel_id, floodext_country_df_reset)
-                output_file='/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_event_floodext_perCOUNTRY.csv'
+                output_file='/projects/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6a_event_floodext_perCOUNTRY.csv'
                 if os.path.exists(output_file):
                     # Append the DataFrame to the existing CSV file
                     floodext_country_df_reset.to_csv(output_file, mode='a', header=False, index=False) # instead of df_sum
