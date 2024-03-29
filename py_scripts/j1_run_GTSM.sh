@@ -123,33 +123,33 @@ for storm_id in $(echo "$unique_values" | sed -n "${first_event},${last_event}p"
         fi          
 
         
-        #if ! timeout 1200 $singularityFolder/execute_singularity_snellius.sh $modelFolder run_dflowfm.sh -m $mduFile; then
-        #    echo "GTSM for $storm_id did NOT finish successfully"
-        #    echo "$storm_id FAILED!" >> storms_log_${yr}.txt
-        #    continue
-        #fi
-        #echo "All runs for STORM: $storm_id have finished"
-        #echo "$storm_id DONE!" >> storms_log_${yr}.txt
-        ## postprocess GTSM, compressing and copying output file in the outputdir
-        #python p3_postprocess_GTSM.py "$storm_model_folder" "$storm_id" "$outputdir_gtsm" &&
-        ## detele the temporary storm id folder of GTSM
-        #rm -rf "$storm_model_folder"
-        #rm $storm_id.done
+        if ! timeout 1200 $singularityFolder/execute_singularity_snellius.sh $modelFolder run_dflowfm.sh -m $mduFile; then
+            echo "GTSM for $storm_id did NOT finish successfully"
+            echo "$storm_id FAILED!" >> storms_log_${yr}.txt
+            continue
+        fi
+        echo "All runs for STORM: $storm_id have finished"
+        echo "$storm_id DONE!" >> storms_log_${yr}.txt
+        # postprocess GTSM, compressing and copying output file in the outputdir
+        python p3_postprocess_GTSM.py "$storm_model_folder" "$storm_id" "$outputdir_gtsm" &&
+        # detele the temporary storm id folder of GTSM
+        rm -rf "$storm_model_folder"
+        rm $storm_id.done
         
-        ## Postprocess GTSM! Delete with done. Delete also slurm of the job!
-        #if [ -f "$storm_id.done" ]; then
-        #    # if the file exists, print a message indicating that the runs are finished
-        #    echo "All runs for STORM: $storm_id have finished"
-        #    echo "$storm_id DONE!" >> storms_log_${yr}.txt
-        #    # postprocess GTSM, compressing and copying output file in the outputdir
-        #    python p3_postprocess_GTSM.py "$storm_model_folder" "$storm_id" "$outputdir_gtsm" &&
-        #    # detele the temporary storm id folder of GTSM
-        #    rm -rf "$storm_model_folder"
-        #    rm $storm_id.done
-        #else
-        #    echo "GTSM for $storm_id did NOT finish successfully"
-        #    echo "$storm_id FAILED!" >> storms_log_${yr}.txt
-        #fi
+        # Postprocess GTSM! Delete with done. Delete also slurm of the job!
+        if [ -f "$storm_id.done" ]; then
+            # if the file exists, print a message indicating that the runs are finished
+            echo "All runs for STORM: $storm_id have finished"
+            echo "$storm_id DONE!" >> storms_log_${yr}.txt
+            # postprocess GTSM, compressing and copying output file in the outputdir
+            python p3_postprocess_GTSM.py "$storm_model_folder" "$storm_id" "$outputdir_gtsm" &&
+            # detele the temporary storm id folder of GTSM
+            rm -rf "$storm_model_folder"
+            rm $storm_id.done
+        else
+            echo "GTSM for $storm_id did NOT finish successfully"
+            echo "$storm_id FAILED!" >> storms_log_${yr}.txt
+        fi
 
     else
         # if the folder already exists, print a message and do nothing else
