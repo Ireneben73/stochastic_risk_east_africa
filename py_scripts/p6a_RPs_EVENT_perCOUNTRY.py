@@ -83,16 +83,4 @@ for country_id in events['index'].unique():
         with open('output_postprocess/p6a_RPs_' + asset + '_event_perCOUNTRY_new.csv', 'a', encoding='utf-8') as csvfile:
           writer = csv.writer(csvfile, delimiter=',')
           writer.writerow([country_id, rank, event_damage, rps])
-          
-    #this should be done for ANNUAL, but not for events
-    '''
-    if not os.path.exists('output_postprocess/p6a_event_expected_damage_' + asset + '_event_perCOUNTRY.csv'):
-      with open('output_postprocess/p6a_event_expected_damage_' + asset + '_event_perCOUNTRY.csv', 'w', encoding='utf-8') as csvfile:
-        writer = csv.writer(csvfile, delimiter=',')
-        writer.writerow(['Index', 'AED'])
-    
-    with open('output_postprocess/p6a_event_expected_damage_' + asset + '_event_perCOUNTRY.csv', 'a', encoding='utf-8') as csvfile:
-      writer = csv.writer(csvfile, delimiter=',')
-      writer.writerow([country_id, annual_expected_damages_values])
-    '''
     
