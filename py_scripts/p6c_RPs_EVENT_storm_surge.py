@@ -16,7 +16,7 @@ import dask.dataframe as dd
 from dask import delayed, compute
 from dask.distributed import Client
 
-events=pd.read_csv(r'/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6d_surge_perEVENT_v2.csv')
+events=pd.read_csv(r'/gpfs/work2/0/einf2224/paper2/scripts/py_scripts/output_postprocess/p6b_surge_perEVENT_v2.csv')
 events_stormsurge=events['max_surge']
 
 print('START CALCULATING RETURN PERIODS', flush=True)    
@@ -64,12 +64,12 @@ for i in range(len(ranks)):
     rank=ranks[int(i)-1]
     Event_stormsurge=event_stormsurge[int(i)-1]
     rps=rps_values[int(i)-1]
-    if not os.path.exists('output_postprocess/p6a_RPs_surge_perEVENT_allAREA.csv'):
-      #with open('output_postprocess/p6a_RPs_waterlevel_perEVENT_allAREA.csv', 'w', encoding='utf-8') as csvfile:
-      with open('output_postprocess/p6a_RPs_surge_perEVENT_allAREA.csv', 'w', encoding='utf-8') as csvfile:
+    if not os.path.exists('output_postprocess/p6c_RPs_surge_perEVENT_allAREA.csv'):
+      #with open('output_postprocess/p6c_RPs_waterlevel_perEVENT_allAREA.csv', 'w', encoding='utf-8') as csvfile:
+      with open('output_postprocess/p6c_RPs_surge_perEVENT_allAREA.csv', 'w', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(['Rank', 'Total stormsurge', 'Return Period'])
     
-    with open('output_postprocess/p6a_RPs_surge_perEVENT_allAREA.csv', 'a', encoding='utf-8') as csvfile:
+    with open('output_postprocess/p6c_RPs_surge_perEVENT_allAREA.csv', 'a', encoding='utf-8') as csvfile:
       writer = csv.writer(csvfile, delimiter=',')
       writer.writerow([rank, Event_stormsurge, rps])
