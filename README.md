@@ -3,7 +3,7 @@ This repository contains the code for the reproduction of the paper:
 
 _Benito, I., Aerts, J.C.J.H., Eilander, D., Ward, P.J., and Muis,S., 2024. Stochastic coastal flood risk modelling for the east coast of Africa._ 
 
-In this study we use a novel modelling framework to dynamically simulate stochastic coastal flood risk for the east coast of Africa. Our approach uses 10,000 years of synthetic tropical cyclones from STORM as input data to dynamically simulate water levels usingGlobal Tide and Surge Model (GTSM). These water level timeseries are then used as coastal boundary conditions for the hydrodynamic flood model Super-Fast INundation of CoastS (SFINCS). Subsequently, we calculate the damage of each individual tropical cyclone event and empirically derive the risk curve for each country.
+In this study we use a novel modelling framework to dynamically simulate stochastic coastal flood risk for the east coast of Africa. Our approach uses 10,000 years of synthetic tropical cyclones from STORM as input data to dynamically simulate water levels using Global Tide and Surge Model (GTSM). These water level timeseries are then used as coastal boundary conditions for the hydrodynamic flood model Super-Fast INundation of CoastS (SFINCS). Subsequently, we calculate the damage of each individual tropical cyclone event and empirically derive the risk curve for each country.
 
 The code consists of the following files and directories:
 * **py_environments:** folder containing the environments necessary to run the scripts
